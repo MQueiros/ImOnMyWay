@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.imonmyway.Map" >
+    
+    <AutoCompleteTextView
+    android:id="@+id/searchEdit"
+    android:layout_width="fill_parent" 
+    android:layout_height="0dp" 
+    android:layout_weight=".10"
+    android:hint="Search"/>
+    
+    <fragment
+    android:id="@+id/map"
+    android:layout_width="fill_parent" 
+    android:layout_height="0dp" 
+    android:layout_weight=".83"
+    class="com.google.android.gms.maps.MapFragment" />
+    
+<!--     <TextView  -->
+<!--         android:id="@+id/text"  -->
+
+<!--         android:layout_centerHorizontal="true" -->
+<!--         android:ellipsize="end" -->
+<!--         android:layout_marginTop="10dp" -->
+<!--         android:text="Pick 1 or more locations. E.g.: your final location. Warning: you need an internet connection." -->
+<!--          /> -->
+
+    <Button
+        android:id="@+id/buttonAddMapLocation"
+        android:layout_width="fill_parent" 
+        android:layout_height="0dp" 
+        android:layout_weight=".07"
+        android:background="#39a4c6"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/text"
+        android:text="Add this Location" /> 
+</LinearLayout>

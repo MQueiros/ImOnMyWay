@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.imonmyway.Actions" >
+    
+    <TextView 
+        android:id="@+id/textHelp" 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_centerHorizontal="true"
+        android:ellipsize="end"
+        android:layout_marginTop="10dp"
+        android:text="Add 1 or more actions to perform during your course."
+         />
+
+    <ListView
+    android:id="@+id/listView1"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="0dp" 
+    android:layout_weight=".90" >
+	</ListView> 
+    
+    <Button
+        android:id="@+id/buttonAddAction"
+        android:layout_width="fill_parent" 
+        android:layout_height="0dp" 
+        android:layout_weight=".10"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/text"
+        android:text="Add Action"
+        android:textColor="#ffffff"
+        android:background="#555555" />
+
+            
+        
+</LinearLayout>

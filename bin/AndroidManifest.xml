@@ -1,0 +1,225 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.imonmyway"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+    
+        <uses-feature
+    android:glEsVersion="0x00020000"
+    android:required="true" /> 
+    
+    <uses-permission android:name="com.javapapers.currentlocationinmap.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/imonmyway_app_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name=".Splash"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".IntroActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.INTROACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".Locations"
+            android:label="@string/app_name" >
+            
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.examples.imonmyway.INTROACTIVITY" />
+            
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.LOCATIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            
+            
+        </activity>
+        
+        <activity
+            android:name=".Actions"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.ACTIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.examples.imonmyway.IntroActivity" />
+        </activity>
+        
+        <activity
+            android:name=".Schedule"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.SCHEDULE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.examples.imonmyway.IntroActivity" />
+        </activity>
+        
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.examples.imonmyway.StartActivity" />
+        </activity>
+        
+        <activity
+            android:name=".RunningActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.RUNNING" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.examples.imonmyway.IntroActivity" />
+        </activity>
+        
+        <service
+        	android:name=".BackgroundActionsService"
+        	android:label="BackgroundActionsService" >
+    	</service>
+        
+        <activity
+            android:name=".NewAction"
+            android:label="@string/app_name" >
+            
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.examples.imonmyway.Actions" />
+            
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.NEWACTION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".Map"
+            android:label="@string/app_name" >
+    
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.MAP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".ShowLocations"
+            android:label="@string/app_name" >
+    
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.MAPSHOWLOCATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".ShowRoute"
+            android:label="@string/app_name" >
+    
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.MAPSHOWROUTE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".ActionTypesActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.UserDialog" >
+    
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.ACTIONTYPESACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".ActionLocationsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.UserDialog" >
+    
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.ACTIONLOCATIONSACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".MapDialog"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.examples.imonmyway.MAPDIALOG" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAEaxSmrh9YLqI3eRcfpNV360sxder4rfc"/> 
+        
+<!--         <meta-data -->
+<!--     		android:name="com.google.android.geo.API_KEY" -->
+<!--     		android:value="AIzaSyA4SQgsqVOtelONpHFXjCGaNhoYX5RH3cI" /> -->
+        
+    </application>
+
+</manifest>

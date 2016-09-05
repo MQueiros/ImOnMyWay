@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.imonmyway.MapDialog"  >
+
+    <TableLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:stretchColumns="1">
+    <TableRow android:padding="5dip">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:gravity="center_horizontal"
+            android:text="New Location"
+            android:textSize="17dip"
+            android:typeface="serif" />
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textStyle="bold"
+            android:layout_column="0"/>
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:textSize="12dip"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Coord.:"
+            android:textStyle="bold"
+            android:layout_column="0"/>
+        <EditText
+            android:id="@+id/edit_coord"
+            android:editable="false"
+            android:layout_height="wrap_content"
+            android:scrollHorizontally="false"
+            android:textSize="12dip" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Info:"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edit_info"
+            android:layout_height="wrap_content"
+            android:textSize="12dip"  />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/ok_button"
+            android:text="OK"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+        <Button
+            android:id="@+id/cancel_button"
+            android:text="Cancel"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+    </TableRow>
+</TableLayout>
+    
+
+
+</LinearLayout>

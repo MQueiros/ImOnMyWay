@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.imonmyway.Actions" >
+    
+    <TextView 
+        android:id="@+id/textHelp" 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_centerHorizontal="true"
+        android:ellipsize="end"
+        android:layout_marginTop="10dp"
+        android:text="Add 1 or more schedules. E.g.: your home or work place."
+     />
+
+               
+</LinearLayout>
