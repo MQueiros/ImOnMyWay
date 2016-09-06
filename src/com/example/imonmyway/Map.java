@@ -128,7 +128,7 @@ public class Map extends FragmentActivity implements LocationListener , OnMapRea
                      location.setName(name);
                      
                      String info = (String) b.getSerializable("Info");
-                     location.setName(info);
+                     location.setInfo(info);
                      
                      Intent intent = new Intent();
                      intent.putExtra("NewName", location.getName());
