@@ -91,6 +91,9 @@ public class Actions extends ActionBarActivity {
         	helpText.setVisibility(View.VISIBLE);
         }
 
+        TinyDB tinydb = new TinyDB(this);
+		tinydb.putListObjectActions("MyActions", actionsList);
+        
     }
 	
 	@Override
@@ -144,9 +147,6 @@ public class Actions extends ActionBarActivity {
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
-
-		TinyDB tinydb = new TinyDB(this);
-		tinydb.putListObjectActions("MyActions", actionsList);
 		
 	}
 }

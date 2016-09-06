@@ -79,7 +79,6 @@ public class RunningActivity extends ActionBarActivity {
         	            stopService(new Intent(getBaseContext(), BackgroundActionsService.class));
         	            finish();
         	        }
-
         	    });
 
 				alert_cancel.setNegativeButton("NO", new DialogInterface.OnClickListener() {

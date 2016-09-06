@@ -1,6 +1,7 @@
 package com.example.imonmyway;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -72,8 +73,6 @@ public class Map extends FragmentActivity implements LocationListener , OnMapRea
 			@Override
 			public void onClick(View v) {
 				
-				String coordinates = "", info = "";
-				
 				Location _loc = new Location("dummyprovider");
 				_loc.setLatitude(myMarker.getPosition().latitude);
 				_loc.setLongitude(myMarker.getPosition().longitude);
@@ -83,7 +82,7 @@ public class Map extends FragmentActivity implements LocationListener , OnMapRea
 				
 				Intent intent = new Intent(Map.this, MapDialog.class);
 				
-				intent.putExtra("Coordinates", location.getCoordinates().getLatitude() + ", " + location.getCoordinates().getLongitude());
+				intent.putExtra("Coordinates", new DecimalFormat("#.########").format(location.getCoordinates().getLatitude()) + ", " + new DecimalFormat("#.########").format(location.getCoordinates().getLongitude()));
 		        intent.putExtra("Info", location.getInfo());
 		        startActivityForResult(intent, 1);
 			}
@@ -230,9 +229,6 @@ public class Map extends FragmentActivity implements LocationListener , OnMapRea
 			e.printStackTrace();
 		}
     	if (addresses.size() > 0){
-    		Toast.makeText(Map.this, "" + addresses.get(0).getCountryName() + "; " + addresses.get(0).getLocality() + "; " + addresses.get(0).getThoroughfare(),
- 				   Toast.LENGTH_LONG).show();
-    		
     		myMarker.setSnippet("" + addresses.get(0).getCountryName() + "; " + addresses.get(0).getLocality() + "; " + addresses.get(0).getThoroughfare());
     	}
     	    

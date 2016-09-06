@@ -34,36 +34,13 @@ public class IntroActivity extends Activity {
 	ArrayList<ActionsStruct> actionsList = new ArrayList<ActionsStruct>();
 	ArrayList<LocationsStruct> locationsList = new ArrayList<LocationsStruct>();
 
+	Boolean isRunning = false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_intro);
-
-		TinyDB tinydb = new TinyDB(this);
-
-		Boolean isRunning = tinydb.getBoolean("IsRunning");
-
-        actionsList = tinydb.getListObjectActions("MyActions", ActionsStruct.class);
-        locationsList = tinydb.getListObject("MyLocations", LocationsStruct.class);
-		
-
-		start_now_text = (TextView) findViewById(R.id.StartNowText);
-		if(isRunning)
-		{
-			start_now_text.setText("Running...");
-			start_now_helptext = (TextView) findViewById(R.id.startnowhelpText);
-			start_now_helptext.setText("Click for more details...");
-		}
-
-        locations_helptext = (TextView) findViewById(R.id.locationshelpText);
-        if(locationsList.size() > 0)
-        	locations_helptext.setText(locationsList.size() + " locations available");
-		
-        actions_helptext = (TextView) findViewById(R.id.actionshelpText);
-		
-        if(actionsList.size() > 0)
-        	actions_helptext.setText(actionsList.size() + " actions available");
         
 		locations_layout = (View) findViewById(R.id.locationsLayout);
 		actions_layout = (View) findViewById(R.id.ActionsLayout);
@@ -114,9 +91,7 @@ public class IntroActivity extends Activity {
 				{
 					Intent openStartActivity = new Intent("com.examples.imonmyway.START");
 					startActivity(openStartActivity); 
-				}
-				
-				
+				}	
 			}
 		});
 	}
@@ -127,26 +102,31 @@ public class IntroActivity extends Activity {
 		super.onResume();
 		
 		TinyDB tinydb = new TinyDB(this);
+		
         actionsList = tinydb.getListObjectActions("MyActions", ActionsStruct.class);
         locationsList = tinydb.getListObject("MyLocations", LocationsStruct.class);
+		isRunning = tinydb.getBoolean("IsRunning");
+        
+		start_now_text = (TextView) findViewById(R.id.StartNowText);
 		
+		if(isRunning)
+		{
+			start_now_text.setText("Running...");
+			start_now_helptext = (TextView) findViewById(R.id.startnowhelpText);
+			start_now_helptext.setText("Click for more details...");
+		}
+
         locations_helptext = (TextView) findViewById(R.id.locationshelpText);
         if(locationsList.size() > 0)
-        	locations_helptext.setText(locationsList.size() + " location(s) available");
-		actions_helptext = (TextView) findViewById(R.id.actionshelpText);
-		if(actionsList.size() > 0)
-        	actions_helptext.setText(actionsList.size() + " action(s) available");
-	}
-
-	
-	
-//	@Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main_menu, menu);
-//
-//        return super.onCreateOptionsMenu(menu);
-//    }
-	
-	}
+        {
+        	locations_helptext.setText(locationsList.size() + " locations available");
+        }
+		
+        actions_helptext = (TextView) findViewById(R.id.actionshelpText);
+		
+        if(actionsList.size() > 0)
+        {
+        	actions_helptext.setText(actionsList.size() + " actions available");
+        }
+	}	
+}

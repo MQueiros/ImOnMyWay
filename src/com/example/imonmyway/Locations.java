@@ -155,10 +155,6 @@ public class Locations extends ActionBarActivity {
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
-
-		TinyDB tinydb = new TinyDB(this);
-		tinydb.putListObject("MyLocations", locationsList);
-		
 	}
 	
 	private void RefreshLocationsList(){
@@ -175,6 +171,9 @@ public class Locations extends ActionBarActivity {
         else{
         	helpText.setVisibility(View.VISIBLE);
         }
+        
+        TinyDB tinydb = new TinyDB(this);
+		tinydb.putListObject("MyLocations", locationsList);
 	}
 
 }

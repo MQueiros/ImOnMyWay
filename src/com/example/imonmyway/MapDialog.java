@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -21,7 +23,6 @@ import android.widget.EditText;
 	  protected void onCreate(Bundle savedInstanceState) {
 
 		  super.onCreate(savedInstanceState);
-		  requestWindowFeature(Window.FEATURE_NO_TITLE);
 		  setContentView(R.layout.activity_map_dialog);
 		  
 		  Bundle b = getIntent().getExtras();
@@ -40,7 +41,6 @@ import android.widget.EditText;
 		  edit_info.setText(info);
 		  
 		  edit_name = (EditText) findViewById(R.id.edit_name);
-		  edit_name.setText("Location 1");
 		  
 		  yes = (Button) findViewById(R.id.ok_button);
 		  no = (Button) findViewById(R.id.cancel_button);
@@ -61,7 +61,7 @@ import android.widget.EditText;
 	      if (edit_name.getText().toString().trim().length() > 0 && edit_info.getText().toString().trim().length() > 0){
 		      
 		      intent.putExtra("Name", edit_name.getText().toString().trim().toUpperCase());
-		      intent.putExtra("Info", edit_info.getText().toString().trim().toUpperCase());
+		      intent.putExtra("Info", edit_info.getText().toString().trim());
 		      setResult(Activity.RESULT_OK, intent);
 		      finish();
 	      }

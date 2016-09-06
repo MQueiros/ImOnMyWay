@@ -8,23 +8,25 @@
 
     <TableLayout
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:stretchColumns="1">
+    
     <TableRow android:padding="5dip">
 
         <TextView
             android:layout_height="wrap_content"
             android:layout_span="2"
             android:gravity="center_horizontal"
-            android:text="New Location"
+            android:hint="New Location"
             android:textSize="17dip"
             android:typeface="serif" />
 
     </TableRow>
-    <TableRow>
+    
+    <TableRow android:padding="5dip">
         <TextView
             android:layout_height="wrap_content"
             android:text="Name:"
@@ -34,9 +36,11 @@
             android:id="@+id/edit_name"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:textSize="12dip"/>
+            android:hint="Home, Workplace, etc"
+            android:textSize="12dip"
+            android:maxLength="50"/>
     </TableRow>
-    <TableRow>
+    <TableRow android:padding="5dip">
         <TextView
             android:layout_height="wrap_content"
             android:text="Coord.:"
@@ -47,19 +51,23 @@
             android:editable="false"
             android:layout_height="wrap_content"
             android:scrollHorizontally="false"
+            android:layout_column="1"
             android:textSize="12dip" />
     </TableRow>
-    <TableRow>
+    <TableRow android:padding="5dip">
         <TextView
             android:layout_height="wrap_content"
             android:text="Info:"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_column="0" />
         <EditText
             android:id="@+id/edit_info"
             android:layout_height="wrap_content"
-            android:textSize="12dip"  />
+            android:layout_column="1"
+            android:textSize="12dip"
+            android:maxLength="50"  />
     </TableRow>
-    <TableRow>
+    <TableRow android:padding="5dip">
         <Button
             android:id="@+id/ok_button"
             android:text="OK"

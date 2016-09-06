@@ -125,6 +125,11 @@ public class BackgroundActionsService extends Service {
                 }
             }
         }
+        
+        TinyDB tinydb = new TinyDB(BackgroundActionsService.this);
+        tinydb.putListObjectActions("RunningActions", new ArrayList<ActionsStruct>());
+		tinydb.putBoolean("IsRunning", false);
+		tinydb.putString("RunningEndTime", "");
     }
 
     @Override
@@ -198,7 +203,7 @@ public class BackgroundActionsService extends Service {
             public void run() {
             	remoteViews.setTextViewText(R.id.from, "Debug " + Integer.toString(a));
                 remoteViews.setTextViewText(R.id.mainText, "Performing Actions...\n" + number_of_actions_done + "/" + actionsRunningList.size() + " actions performed");
-                remoteViews.setTextViewText(R.id.to, "Run Until: " + endTime);
+                remoteViews.setTextViewText(R.id.to, "Running Until: " + endTime);
             	mNotificationManager.notify(100, mBuilder.build());
             	a++;
             	ProcessSecond();
@@ -260,7 +265,7 @@ public class BackgroundActionsService extends Service {
 
     				actionsRunningList.get(i).setUsedState(1);
                     number_of_actions_done++;
-                    remoteViews.setProgressBar(R.id.progress, 100, (int) ((float)number_of_actions_done/(float)actionsRunningList.size())*100, false)
+                    remoteViews.setProgressBar(R.id.progress, 100, (int) ((float)number_of_actions_done/(float)actionsRunningList.size())*100, false);
     				
     				all_actions_done = true;
     				for(int j = 0; j < actionsRunningList.size(); j++){
@@ -285,6 +290,7 @@ public class BackgroundActionsService extends Service {
     
     private void stopService() {
         if (timer != null) timer.cancel();
+        
     }
     
     private void initializeLocationManager() {
