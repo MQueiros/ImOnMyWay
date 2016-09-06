@@ -61,6 +61,7 @@ import android.widget.EditText;
 	      if (edit_name.getText().toString().trim().length() > 0 && edit_info.getText().toString().trim().length() > 0){
 		      
 		      intent.putExtra("Name", edit_name.getText().toString().trim().toUpperCase());
+		      intent.putExtra("Info", edit_info.getText().toString().trim().toUpperCase());
 		      setResult(Activity.RESULT_OK, intent);
 		      finish();
 	      }
