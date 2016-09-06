@@ -79,7 +79,7 @@
         android:layout_centerHorizontal="true"      
         android:layout_centerVertical="true"      
         android:max="100" 
-        android:progress="45"/> 
+        android:progress="0"/> 
 
 
 	</LinearLayout>

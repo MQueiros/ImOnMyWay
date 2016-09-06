@@ -27,9 +27,9 @@ import android.widget.Toast;
 
 public class IntroActivity extends Activity {
 	
-	TextView location_text, action_text;
+	TextView location_text, action_text, start_now_text;
 	View locations_layout, actions_layout, schedule_layout, start_layout;
-	TextView locations_helptext, actions_helptext;
+	TextView locations_helptext, actions_helptext, start_now_helptext;
 	
 	ArrayList<ActionsStruct> actionsList = new ArrayList<ActionsStruct>();
 	ArrayList<LocationsStruct> locationsList = new ArrayList<LocationsStruct>();
@@ -41,9 +41,21 @@ public class IntroActivity extends Activity {
 		setContentView(R.layout.activity_intro);
 
 		TinyDB tinydb = new TinyDB(this);
+
+		Boolean isRunning = tinydb.getBoolean("IsRunning");
+
         actionsList = tinydb.getListObjectActions("MyActions", ActionsStruct.class);
         locationsList = tinydb.getListObject("MyLocations", LocationsStruct.class);
 		
+
+		start_now_text = (TextView) findViewById(R.id.StartNowText);
+		if(isRunning)
+		{
+			start_now_text.setText("Running...");
+			start_now_helptext = (TextView) findViewById(R.id.startnowhelpText);
+			start_now_helptext.setText("Click for more details...");
+		}
+
         locations_helptext = (TextView) findViewById(R.id.locationshelpText);
         if(locationsList.size() > 0)
         	locations_helptext.setText(locationsList.size() + " locations available");
@@ -93,8 +105,17 @@ public class IntroActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				Intent openStartActivity = new Intent("com.examples.imonmyway.START");
-				startActivity(openStartActivity); 
+				if(isRunning)
+				{
+					Intent openRunningActivity = new Intent("com.examples.imonmyway.RUNNING");
+					startActivity(openRunningActivity); 
+				}
+				else
+				{
+					Intent openStartActivity = new Intent("com.examples.imonmyway.START");
+					startActivity(openStartActivity); 
+				}
+				
 				
 			}
 		});

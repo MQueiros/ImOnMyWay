@@ -42,14 +42,13 @@ public class BackgroundActionsService extends Service {
     Boolean isRunning = false;
     String endTime = null;
     RemoteViews remoteViews;
-    
+
     Boolean all_actions_done = false;
+    short number_of_actions_done = 0;
     
     private static final String MyOnClick = "myOnClickTag";
     
     private class LocationListener implements android.location.LocationListener{
-        
-    	
         
     	public LocationListener(String provider)
         {
@@ -182,9 +181,6 @@ public class BackgroundActionsService extends Service {
 		remoteViews.setOnClickPendingIntent(R.id.button1, 
                 getPendingSelfIntent(getApplicationContext(), MyOnClick));
 		
-		remoteViews.setTextViewText(R.id.mainText, "Performing Actions...\n0/" + actionsRunningList.size() + " actions performed");
-		remoteViews.setTextViewText(R.id.to, endTime);
-		
 		mNotificationManager = (NotificationManager) getSystemService(getApplicationContext().NOTIFICATION_SERVICE);  
        
 		mBuilder.setOngoing(true);
@@ -200,7 +196,9 @@ public class BackgroundActionsService extends Service {
 
             @Override
             public void run() {
-            	remoteViews.setTextViewText(R.id.from, "Test " + Integer.toString(a));
+            	remoteViews.setTextViewText(R.id.from, "Debug " + Integer.toString(a));
+                remoteViews.setTextViewText(R.id.mainText, "Performing Actions...\n" + number_of_actions_done + "/" + actionsRunningList.size() + " actions performed");
+                remoteViews.setTextViewText(R.id.to, "Run Until: " + endTime);
             	mNotificationManager.notify(100, mBuilder.build());
             	a++;
             	ProcessSecond();
@@ -261,6 +259,8 @@ public class BackgroundActionsService extends Service {
     				}
 
     				actionsRunningList.get(i).setUsedState(1);
+                    number_of_actions_done++;
+                    remoteViews.setProgressBar(R.id.progress, 100, (int) ((float)number_of_actions_done/(float)actionsRunningList.size())*100, false)
     				
     				all_actions_done = true;
     				for(int j = 0; j < actionsRunningList.size(); j++){

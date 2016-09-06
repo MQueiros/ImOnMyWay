@@ -119,6 +119,7 @@ public class StartActivity extends ActionBarActivity {
 				startService(new Intent(StartActivity.this, BackgroundActionsService.class));
 				
 				Intent openRunActivity = new Intent("com.examples.imonmyway.RUNNING");
+				finish();
 				startActivity(openRunActivity); 
 			}
 		});

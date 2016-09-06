@@ -177,7 +177,7 @@
     		android:layout_weight=".50"
             android:layout_height="fill_parent"
             android:gravity="bottom|right"
-            android:text=""
+            android:text="Click to pick some actions and get started!"
             android:textSize="12sp"
             android:textColor="#ffffff" />
     
