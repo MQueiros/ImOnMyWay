@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:ellipsize="end"
         android:layout_marginTop="10dp"
-        android:text="Add 1 or more actions to perform during your course."
+        android:text="@string/add_action_hint"
          />
 
     <ListView
@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/text"
-        android:text="Add Action"
+        android:text="@string/add_action"
         android:textColor="#ffffff"
         android:background="#555555" />
 

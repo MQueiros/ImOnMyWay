@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_span="2"
             android:gravity="center_horizontal"
-            android:hint="New Location"
+            android:text="@string/new_location_title"
             android:textSize="17dip"
             android:typeface="serif" />
 
@@ -29,21 +29,21 @@
     <TableRow android:padding="5dip">
         <TextView
             android:layout_height="wrap_content"
-            android:text="Name:"
+            android:text="@string/new_location_name_label"
             android:textStyle="bold"
             android:layout_column="0"/>
         <EditText
             android:id="@+id/edit_name"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:hint="Home, Workplace, etc"
+            android:hint="@string/new_location_name_hint"
             android:textSize="12dip"
             android:maxLength="50"/>
     </TableRow>
     <TableRow android:padding="5dip">
         <TextView
             android:layout_height="wrap_content"
-            android:text="Coord.:"
+            android:text="@string/new_location_coordinates_label"
             android:textStyle="bold"
             android:layout_column="0"/>
         <EditText
@@ -57,7 +57,7 @@
     <TableRow android:padding="5dip">
         <TextView
             android:layout_height="wrap_content"
-            android:text="Info:"
+            android:text="@string/new_location_info_label"
             android:textStyle="bold"
             android:layout_column="0" />
         <EditText
@@ -65,17 +65,18 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:textSize="12dip"
+            android:hint="@string/new_location_info_hint"
             android:maxLength="50"  />
     </TableRow>
     <TableRow android:padding="5dip">
         <Button
             android:id="@+id/ok_button"
-            android:text="OK"
+            android:text="@string/ok_button"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content" />
         <Button
             android:id="@+id/cancel_button"
-            android:text="Cancel"
+            android:text="@string/cancel_button"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content" />
     </TableRow>

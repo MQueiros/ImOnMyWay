@@ -33,7 +33,7 @@
     		android:layout_marginLeft="5dp"
             android:layout_height="fill_parent"
             android:gravity="center_vertical"
-            android:text="Locations"
+            android:text="@string/locations_main_label"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
             android:textAllCaps="true"
@@ -45,7 +45,7 @@
     		android:layout_weight=".50"
             android:layout_height="fill_parent"
             android:gravity="bottom|right"
-            android:text="Click to add locations"
+            android:text="@string/locations_help_default"
             android:textSize="12sp"
             android:textColor="#ffffff" />
     
@@ -77,7 +77,7 @@
     		android:layout_marginLeft="5dp"
             android:layout_height="fill_parent"
             android:gravity="center_vertical"
-            android:text="Actions"
+            android:text="@string/actions_main_label"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
             android:textAllCaps="true"
@@ -89,7 +89,7 @@
     		android:layout_weight=".50"
             android:layout_height="fill_parent"
             android:gravity="bottom|right"
-            android:text="Click to add actions"
+            android:text="@string/actions_help_default"
             android:textSize="12sp"
             android:textColor="#ffffff" />
     
@@ -121,7 +121,7 @@
     		android:layout_marginLeft="5dp"
             android:layout_height="fill_parent"
             android:gravity="center_vertical"
-            android:text="Schedule"
+            android:text="@string/schedule_main_label"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
             android:textAllCaps="true"
@@ -133,7 +133,7 @@
     		android:layout_weight=".50"
             android:layout_height="fill_parent"
             android:gravity="bottom|right"
-            android:text="Click to schedule actions"
+            android:text="@string/schedule_help_default"
             android:textSize="12sp"
             android:textColor="#ffffff" />
     
@@ -165,7 +165,7 @@
     		android:layout_marginLeft="5dp"
             android:layout_height="fill_parent"
             android:gravity="center_vertical"
-            android:text="Start Now!"
+            android:text="@string/start_now_main_label"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
             android:textAllCaps="true"
@@ -177,7 +177,7 @@
     		android:layout_weight=".50"
             android:layout_height="fill_parent"
             android:gravity="bottom|right"
-            android:text="Click to pick some actions and get started!"
+            android:text="@string/start_help"
             android:textSize="12sp"
             android:textColor="#ffffff" />
     

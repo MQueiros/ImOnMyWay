@@ -2544,13 +2544,29 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f070038;
         public static final int accept=0x7f070002;
         public static final int action_settings=0x7f07003c;
-        public static final int app_name=0x7f07003a;
+        public static final int action_type_bar_title=0x7f070066;
+        public static final int action_type_call=0x7f070068;
+        public static final int action_type_call_to=0x7f07006a;
+        public static final int action_type_message=0x7f070067;
+        public static final int action_type_message_to=0x7f070069;
+        public static final int actions_bar_title=0x7f07005a;
+        public static final int actions_help=0x7f070047;
+        public static final int actions_help_default=0x7f070046;
+        public static final int actions_main_label=0x7f070045;
+        public static final int add_action=0x7f07005e;
+        public static final int add_action_hint=0x7f07005f;
+        public static final int add_location=0x7f070051;
+        public static final int add_locations_hint=0x7f070053;
+        public static final int add_this_location=0x7f070052;
+        public static final int app_name=0x7f07003b;
         /**  Brand name for Facebook [DO NOT TRANSLATE] 
          */
         public static final int auth_google_play_services_client_facebook_display_name=0x7f070007;
         /**  Brand name for Google [DO NOT TRANSLATE] 
          */
         public static final int auth_google_play_services_client_google_display_name=0x7f070006;
+        public static final int cancel_button=0x7f070040;
+        public static final int cancel_dialog_question=0x7f070041;
         /**  Message of the notification to indicate an active cast display connection.  [CHAR LIMIT=80] NOTE: Same text as msgid="794424023757290105" 
          */
         public static final int cast_notification_connected_message=0x7f070025;
@@ -2663,13 +2679,51 @@ containing a value of this type.
         public static final int create_calendar_message=0x7f070005;
         public static final int create_calendar_title=0x7f070004;
         public static final int decline=0x7f070003;
-        public static final int hello_world=0x7f07003b;
+        public static final int delete_action_question=0x7f07005b;
+        public static final int delete_all_actions_question=0x7f07005c;
+        public static final int delete_all_locations_question=0x7f070050;
+        public static final int delete_location_question=0x7f07004f;
+        public static final int delete_this_action_question=0x7f07005d;
+        public static final int locations_bar_title=0x7f07004e;
+        public static final int locations_help=0x7f070044;
+        public static final int locations_help_default=0x7f070043;
+        public static final int locations_main_label=0x7f070042;
+        public static final int negative_button=0x7f07003e;
+        public static final int new_action_bar_title=0x7f070060;
+        public static final int new_action_location_label=0x7f070063;
+        public static final int new_action_text_hint_default=0x7f070065;
+        public static final int new_action_text_label=0x7f070064;
+        public static final int new_action_to_label=0x7f070062;
+        public static final int new_action_type_label=0x7f070061;
+        public static final int new_location_coordinates_label=0x7f070057;
+        public static final int new_location_info_hint=0x7f070059;
+        public static final int new_location_info_label=0x7f070058;
+        public static final int new_location_name_hint=0x7f070056;
+        public static final int new_location_name_label=0x7f070055;
+        public static final int new_location_title=0x7f070054;
+        public static final int ok_button=0x7f07003f;
         /**  Description of the button that clears the search input when searching for places. 
          */
         public static final int place_autocomplete_clear_button=0x7f070029;
         /**  Search box hint text for Place Autocomplete. [CHAR LIMIT=15] 
          */
         public static final int place_autocomplete_search_hint=0x7f070028;
+        public static final int positive_button=0x7f07003d;
+        public static final int running_cancel=0x7f070070;
+        public static final int running_help=0x7f07004d;
+        public static final int running_main_label=0x7f07004b;
+        public static final int running_no_actions_toast=0x7f070071;
+        public static final int running_performing_actions_1=0x7f070072;
+        public static final int running_performing_actions_2=0x7f070073;
+        public static final int running_show_map=0x7f07006f;
+        public static final int schedule_help_default=0x7f070049;
+        public static final int schedule_main_label=0x7f070048;
+        public static final int start=0x7f07006e;
+        public static final int start_actions_default=0x7f07006b;
+        public static final int start_help=0x7f07004c;
+        public static final int start_no_actions=0x7f07006d;
+        public static final int start_now_main_label=0x7f07004a;
+        public static final int start_run_until=0x7f07006c;
         public static final int store_picture_message=0x7f070001;
         public static final int store_picture_title=0x7f070000;
         /**  Text on a placeholder buy button when Google Play services is not
@@ -2678,6 +2732,7 @@ containing a value of this type.
          [CHAR LIMIT=30] 
          */
         public static final int wallet_buy_button_place_holder=0x7f07002a;
+        public static final int welcome=0x7f07003a;
     }
     public static final class style {
         /** 

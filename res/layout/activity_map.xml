@@ -37,5 +37,5 @@
         android:textColor="#ffffff"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/text"
-        android:text="Add this Location" /> 
+        android:text="@string/add_this_location" /> 
 </LinearLayout>

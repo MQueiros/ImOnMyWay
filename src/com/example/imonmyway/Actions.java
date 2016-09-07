@@ -18,135 +18,143 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class Actions extends ActionBarActivity {
-	
+
 	TextView helpText;
 	Button button_add_action;
 	AlertDialog.Builder builder;
 	ActionsStruct new_action = new ActionsStruct();
 	ArrayList<ActionsStruct> actionsList = new ArrayList<ActionsStruct>();
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_actions);
-		
+
 		TinyDB tinydb = new TinyDB(this);
-        actionsList = tinydb.getListObjectActions("MyActions", ActionsStruct.class);
-		
+		actionsList = tinydb.getListObjectActions("MyActions",
+				ActionsStruct.class);
+
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		setTitle("Actions");
-		
+		setTitle(getResources().getString(R.string.actions_bar_title));
+
 		button_add_action = (Button) findViewById(R.id.buttonAddAction);
-		
+
 		button_add_action.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				
+
 				Intent intent = new Intent(Actions.this, NewAction.class);
-		        startActivityForResult(intent, 1);
+				startActivityForResult(intent, 1);
 			}
 		});
-		
+
 		builder = new AlertDialog.Builder(this);
-		
-	    builder.setMessage("Delete All Locations?");
 
-	    builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+		builder.setMessage(getResources().getString(
+				R.string.delete_all_actions_question));
 
-	        public void onClick(DialogInterface dialog, int which) {
-	            // Do nothing but close the dialog
+		builder.setPositiveButton(
+				getResources().getString(R.string.positive_button),
+				new DialogInterface.OnClickListener() {
 
-	            dialog.dismiss();
-	        }
+					public void onClick(DialogInterface dialog, int which) {
+						// Do nothing but close the dialog
 
-	    });
+						dialog.dismiss();
+					}
 
-	    builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+				});
 
-	        @Override
-	        public void onClick(DialogInterface dialog, int which) {
-	            // Do nothing
-	            dialog.dismiss();
-	        }
-	    });
+		builder.setNegativeButton(
+				getResources().getString(R.string.negative_button),
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// Do nothing
+						dialog.dismiss();
+					}
+				});
 	}
 
 	@Override
-    public void onResume(){
-        super.onResume();
-        
-        helpText = (TextView) findViewById(R.id.textHelp);
-        helpText.setVisibility(View.GONE);
-        
-        if(actionsList.size() > 0){
-        	
-        	ListView listView = (ListView) findViewById(R.id.listView1);
-            ListAdapter mAdapter = new ActionItemAdapter(this, actionsList, false, false, true);
-            listView.setAdapter(mAdapter);
-            
-        }
-        else{
-        	helpText.setVisibility(View.VISIBLE);
-        }
+	public void onResume() {
+		super.onResume();
 
-        TinyDB tinydb = new TinyDB(this);
+		helpText = (TextView) findViewById(R.id.textHelp);
+		helpText.setVisibility(View.GONE);
+
+		if (actionsList.size() > 0) {
+
+			ListView listView = (ListView) findViewById(R.id.listView1);
+			ListAdapter mAdapter = new ActionItemAdapter(this, actionsList,
+					false, false, true);
+			listView.setAdapter(mAdapter);
+
+		} else {
+			helpText.setVisibility(View.VISIBLE);
+		}
+
+		TinyDB tinydb = new TinyDB(this);
 		tinydb.putListObjectActions("MyActions", actionsList);
-        
-    }
-	
-	@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == Activity.RESULT_OK) {
-                Bundle b = data.getExtras();
-                if (b != null) {
-                	
-                    new_action = (ActionsStruct) b.getSerializable("NewAction");
-                    actionsList.add(new_action);
-//                    AddLocation(new_location.getName(), new_location.getLatitude() + ", " + new_location.getLongitude(), new_location.getInfo(), "");
-                }  
-            } else if (resultCode == 0) {
-                // Do Nothing...    
-            }
-        }
-    }
-	
-	@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-        case android.R.id.home: 
-            // API 5+ solution
-            onBackPressed();
-            return true;
 
-        case R.id.action_reset:
+	}
 
-        	AlertDialog alert = builder.create();
-            alert.show();
-            
-            return true;
-            
-        default:
-            return super.onOptionsItemSelected(item);
-        }
-    }
-	
 	@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.actions_menu, menu);
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == 1) {
+			if (resultCode == Activity.RESULT_OK) {
+				Bundle b = data.getExtras();
+				if (b != null) {
 
-        return super.onCreateOptionsMenu(menu);
-    }
-	
+					new_action = (ActionsStruct) b.getSerializable("NewAction");
+					actionsList.add(new_action);
+					// AddLocation(new_location.getName(),
+					// new_location.getLatitude() + ", " +
+					// new_location.getLongitude(), new_location.getInfo(), "");
+				}
+			} else if (resultCode == 0) {
+				// Do Nothing...
+			}
+		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			// API 5+ solution
+			onBackPressed();
+			return true;
+
+		case R.id.action_reset:
+
+			AlertDialog alert = builder.create();
+			alert.show();
+
+			return true;
+
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.actions_menu, menu);
+
+		return super.onCreateOptionsMenu(menu);
+	}
+
 	@Override
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
-		
+
 	}
 }
