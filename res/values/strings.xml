@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<string name="welcome">Welcome!</string>
     <string name="app_name">I\'m On My Way</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="positive_button">YES</string>
+    <string name="negative_button">NO</string>
+    <string name="ok_button">OK</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="cancel_dialog_question">Are you sure you want to cancel?</string>
+    <string name="locations">Locations</string>
+    <string name="locations_help_default">Click to add locations</string>
+    <string name="locations_help"> location(s) available</string>
+    <string name="actions">Actions</string>
+    <string name="actions_help_default">Click to add actions</string>
+    <string name="actions_help"> action(s) available</string>
+    <string name="schedule">Schedule</string>
+    <string name="schedule_help_default">Click to schedule actions</string>
+    <string name="start_now">Start Now!</string>
+    <string name="running">Running...</string>
+    <string name="start_help">Click to pick some actions and get started!</string>
+    <string name="running_help">Click for more details...</string>
+    <string name="locations_bar_title">Locations</string>
+    <string name="delete_location_question">Delete location </string>
+    <string name="delete_all_locations_question">Delete all locations?</string>
+    <string name="add_location">Add Location</string>
+    <string name="add_locations_hint">Click to add 1 or more locations. E.g.: your home or work place.</string>
+    <string name="new_location_title">New Location</string>
+    <string name="new_location_name_label">Name:</string>
+    <string name="new_location_name_hint">Home, workplace, etc</string>
+    <string name="new_location_coordinates_label">Coordinates:</string>
+    <string name="new_location_info_label">Info:</string>
+    <string name="new_location_info_hint">Street name, address, etc</string>
+    <string name="actions_bar_title">Actions</string>
+    <string name="delete_action_question">Delete action </string>
+    <string name="delete_all_actions_question">Delete all actions?</string>
+    <string name="add_action">Add Action</string>
+    <string name="add_action_hint">Click to add 1 or more actions to perform during your course.</string>
+    <string name="new_action_bar_title">Actions</string>
+    <string name="new_location_title">New Action</string>
+    <string name="new_action_type_label">Type:</string>
+    <string name="new_action_to_label">To:</string>
+    <string name="new_action_location_label">Location:</string>
+    <string name="new_action_location_hint_default">E.g.: I\'m On My Way!</string>
+    <string name="action_type_bar_title">Select Action</string>
+    <string name="action_type_message">Send a message</string>
+    <string name="action_type_call">Make a call</string>
+    <string name="action_type_message_to">Send a message to: </string>
+    <string name="action_type_call_to">Make a call to: </string>
+    <string name="start_actions_default">No actions available</string>
+    <string name="start_run_until">Run Until</string>
+    <string name="start">Start</string>
+    <string name="running_show_map">Show Map</string>
+    <string name="running_cancel">Cancel</string>
+    <string name="running_no_actions_toast">No actions running at this moment...</string>
+    <string name="running_performing_actions_1">Performing actions...</string>
+    <string name="running_performing_actions_2">actions done</string>
 
 </resources>
